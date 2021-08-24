@@ -8,7 +8,7 @@ imagePullSecret: ""
 ##
 resources:
   requests:
-    memory: 512Mi
+    memory: 1024Mi
     cpu: 500m
 
 # upgrade strategy type (e.g. Recreate or RollingUpdate)
@@ -70,7 +70,7 @@ extraVolumes: []
 
 minecraftServer:
   # This must be overridden, since we can't accept this for the user.
-  eula: "FALSE"
+  eula: "TRUE"
   # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
   version: "LATEST"
   # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
@@ -84,7 +84,7 @@ minecraftServer:
   # If type is set to BUKKIT, this sets the URL to download the Bukkit package
   bukkitDownloadUrl:
   # If type is set to SPIGOT, this sets the URL to download the Spigot package
-  spigotDownloadUrl:
+  spigotDownloadUrl: 
   # If type is set to PAPER, this sets the URL to download the PaperSpigot package
   paperDownloadUrl:
   # If type is set to FTB, this sets the server mod to run. You can also provide the URL to download the FTB package
@@ -102,7 +102,7 @@ minecraftServer:
   # A server icon URL for server listings. Auto-scaled and transcoded.
   icon:
   # Max connected players.
-  maxPlayers: 20
+  maxPlayers: 10
   # This sets the maximum possible size in blocks, expressed as a radius, that the world border can obtain.
   maxWorldSize: 10000
   # Allows players to travel to the Nether.
@@ -134,7 +134,7 @@ minecraftServer:
   # One of: creative, survival, adventure, spectator
   gameMode: survival
   # Message of the Day
-  motd: "Welcome to Minecraft on Kubernetes!"
+  motd: "Word on the street is that you have a fat cock."
   # If true, enable player-vs-player damage.
   pvp: false
   # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
@@ -152,7 +152,7 @@ minecraftServer:
   # If true, old versions of downloaded mods will be replaced with new ones from downloadModpackUrl
   removeOldMods: false
   # Check accounts against Minecraft account service.
-  onlineMode: true
+  onlineMode: false
   # If you adjust this, you may need to adjust resources.requests above to match.
   memory: 1024M
   # General JVM options to be passed to the Minecraft server invocation
